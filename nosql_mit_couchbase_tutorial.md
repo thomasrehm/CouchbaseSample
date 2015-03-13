@@ -1,5 +1,5 @@
 #NoSQL mit Couchbase - Übung
-___
+
 Autor: Thomas Rehm
 
 ## Vorbereitungen
@@ -20,13 +20,15 @@ Download-Links oder Dateien vom Datenträger:
 + [git](http://git-scm.com/downloads) (wenn nicht bereits installiert)
 + [Java Development Kit](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) (wenn nicht bereits installiert)
 
+___
+
 ## Teil 1
 ### Installation Couchbase Server
 Bitte installiert als erstes Couchbase Server auf eurem System und startet den Download und die Installation der restlichen Dateien. Während dessen werden wir einen ersten kleinen Einstieg in Couchbase Server durchführen.
 
 + Installiert Couchbase Server auf euerem System.
 + Startet die AdminUI unter der Adresse [localhost:8091/index.html](http://localhost:8091/index.html), falls diese sich nicht automatisch öffnet
-+ Führt das Setup mit den Standardparametern durch
++ Führe das Setup mit den Standardparametern durch
 	+ *Step 1 of 5* einfach defaults lassen
 	+ *Step 2 of 5* Sample Buckets werden zunächst nicht benötigt
 	+ *Step 3 of 5* legt das "default" Bucket mit Standardparametern an, außer den zugewiesenen RAM-Speicher. Den RAM auf 100 bis 200 MB einstellen und nicht, wie vorgeschlagen, den gesamten verfügbaren RAM reservieren. Würden wir das so anlegen, könnten wir später keinen neuen Bucket anlegen, ohne das default-Bucket zu ändern, da kein RAM mehr verfügbar wäre.
@@ -63,9 +65,10 @@ Dokumentation [cbdocloader](http://docs.couchbase.com/admin/admin/CLI/cbdocloade
 + **Create Development View** klicken und neues Design Dokument anlegen & ersten View benennen, zum Beispiel:
 	+ Design Document Name: _design/dev_people
 	+ View Name: all_people
-+ neue Map anlegen (siehe Skript), die alle Vornamen der Personen indexiert
-+ View aufrufen (siehe Skript)
++ neue Map anlegen (siehe Folien), die alle Vornamen der Personen indexiert
++ View aufrufen (siehe Folien)
 
+___
 
 ## Teil 2
 Im zweiten Teil widmen wir uns Couchbase Lite und dem Couchbase SyncGateway. Dazu werden wir die vorbereitete Android App lokal zum laufen bringen und eine Verbindung zwischen App, SyncGateway und Server herstellen.
