@@ -53,62 +53,11 @@ public class MainActivity extends ActionBarActivity {
 
 
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
-        //create Manager and Database Function
-        try {
-            Log.d(TAG, "Call CreateManagerDatabase() to start CouchbaseLite");
-            CreateManagerDatabase();
-        } catch (CouchbaseLiteException e) {
-            e.printStackTrace();
-        }
-
-        //Add new document to database
-        btn_add = (Button) findViewById(R.id.btn_add);
-        btn_add.setOnClickListener(new android.view.View.OnClickListener() {
-            @Override
-            public void onClick(android.view.View v) {
-                EditText inputText = (EditText) findViewById(R.id.text_add);
-                Object text;
-                text = inputText.getText().toString();
-                SetNewDocumentContent(text);
-                inputText.setText("");
-
-            }
-        });
-
-        //start the sync
-        btn_sync = (Button) findViewById(R.id.btn_sync);
-        btn_sync.setOnClickListener(new android.view.View.OnClickListener() {
-            @Override
-            public void onClick(android.view.View v) {
-                startSync();
-            }
-        });
-
-        btn_showAll = (Button) findViewById(R.id.btn_showAll);
-        btn_showAll.setOnClickListener(new android.view.View.OnClickListener() {
-            @Override
-            public void onClick(android.view.View v) {
-                try {
-                    QueryAllDocs();
-                } catch (CouchbaseLiteException e) {
-                    e.printStackTrace();
-                }
-            }
-        });
-
-
-
-    }
-
     public void CreateManagerDatabase() throws CouchbaseLiteException {
         // create a manager
         try {
-            manager = new Manager(new AndroidContext(this), Manager.DEFAULT_OPTIONS);
+            // TODO create new manager
+
             Log.d (TAG, "Manager created");
         } catch (IOException e) {
             Log.e(TAG, "Cannot create manager object");
@@ -121,7 +70,8 @@ public class MainActivity extends ActionBarActivity {
 
         // create a new database
         try {
-            database = manager.getDatabase(DB_NAME);
+            // TODO create new database
+
             Log.d (TAG, "Database created");
         } catch (CouchbaseLiteException e) {
             Log.e(TAG, "Cannot get database");
@@ -147,12 +97,11 @@ public class MainActivity extends ActionBarActivity {
         // display the data for the new currentDoc
         Log.d(TAG, "docContent=" + String.valueOf(docContent));
 
-        // create an empty currentDoc
-        currentDoc = database.createDocument();
+        // TODO create an empty currentDoc inside the database
 
         // add content to currentDoc and write the currentDoc to the database
         try {
-            currentDoc.putProperties(docContent);
+            // TODO add the docContent to the currentDoc
             Log.d(TAG, "Document written to database named " + DB_NAME + " with ID = " + currentDoc.getId());
         } catch (CouchbaseLiteException e) {
             Log.e(TAG, "Cannot write currentDoc to database", e);
@@ -163,13 +112,10 @@ public class MainActivity extends ActionBarActivity {
 
 
     public void QueryAllDocs() throws CouchbaseLiteException {
-        
-        Query query = database.createAllDocumentsQuery();
-        query.setAllDocsMode(Query.AllDocsMode.ALL_DOCS);
-        QueryEnumerator result = query.run();
+        // TODO create & run all documents query (name QueryEnumerator result)
+
 
         final ListView lv = (ListView) findViewById(R.id.listView);
-
 
         List<String> array_list = new ArrayList<String>();
         for (Iterator<QueryRow> it = result; it.hasNext(); ) {
@@ -186,14 +132,8 @@ public class MainActivity extends ActionBarActivity {
 
 
     private void startSync() {
-        URL url = null;
-        try {
-            // connect to SyncGateway
-            url = new URL("http://"+ CB_SERVER + ":" + CB_SERVER_PORT + "/" + CB_SERVER_BUCKET_NAME + "/");
-            Log.d(TAG, "Connect to SyncGateway: " + url.toString());
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
-        }
+        // TODO create a new URL for the sync inside a try-catch for URL validation
+
         // TODO create replication push and pull
 
         // TODO Continuous push or pull?
@@ -205,6 +145,34 @@ public class MainActivity extends ActionBarActivity {
         // TODO start push pull sync
         Log.d(TAG, "Push/Pull sync started");
 
+
+
+
+    }
+
+
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        //create Manager and Database Function
+        try {
+            Log.d(TAG, "Call CreateManagerDatabase() to start CouchbaseLite");
+            CreateManagerDatabase();
+        } catch (CouchbaseLiteException e) {
+            e.printStackTrace();
+        }
+
+        //Add new document to database
+        // TODO add onClickListener for btn_add, hand over the text from the input text_add field and add it to the database with the provided function
+
+
+        // TODO add onClickListener for btn_sync & and set which function should be called
+
+
+        // TODO add onClickListener for btn_showAll & and set which function should be called
 
 
 
