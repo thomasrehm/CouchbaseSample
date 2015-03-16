@@ -126,7 +126,7 @@ Entscheide dich nun für eine der folgenden Optionen:
 #### Sync Gateway einrichten
 + Neuen Bucket anlegen, Name z.B. **sync_gateway**
 + Neue Config-Datei im JSON-Format für das SyncGateway anlegen (siehe Folien) oder [Documentation](http://developer.couchbase.com/mobile/develop/guides/sync-gateway/administering-sync-gateway/command-line-tool/index.html) mit deinen Zugangsdaten zur lokalen Couchbase Server Instanz
-+ Am Mac einfach Binary im Ordner couchbase-sync-gateway/bin per Terminal mit Config-File als ausführen `$ ./sync_gateway [ConfigurationFile...]`
++ Am Mac einfach Binary im Ordner couchbase-sync-gateway/bin per Terminal mit Config-File  ausführen `$ ./sync_gateway [ConfigurationFile...]`
 + Unter Windows **Couchbase SyncGateway** installieren und zum Ordner navigieren, Neues Git Bash beim Ordner und die exe mit der config.json ausführen
 
 #### App vervollständigen
