@@ -140,3 +140,4 @@ Entscheide dich nun für eine der folgenden Optionen:
 + Erweitere die Funktion `SetNewDocumentContent` so, das jedem Document ein neues Key-Value-Paar angehängt wird, das den Namen der lokalen Datenbank enthält
 + Erstelle am Server für das synchronisierte Bucket einen neuen View, der nur die Documents im Index aufnimmt, die zu einer bestimmten lokalen Datenbank gehören
 + Frage den gerade erstellten View ab und sortiere die Ergebnisse in umgekehrter Reihenfolge (siehe [Querying](http://docs.couchbase.com/admin/admin/Views/views-querying.html))
++ Erweitere die App um die Funktionalität Bilder als Anhänge hinzufügen zu können. Erweitere den Replicator so, dass nur noch Documents mit einem angehängten Bild synchronisiert werden.

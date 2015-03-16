@@ -60,7 +60,7 @@ public class MainActivity extends ActionBarActivity {
 
         //create Manager and Database Function
         try {
-            Log.d(TAG, "Call CreatManagerDatabase() function to start CouchbaseLite");
+            Log.d(TAG, "Call CreateManagerDatabase() to start CouchbaseLite");
             CreateManagerDatabase();
         } catch (CouchbaseLiteException e) {
             e.printStackTrace();
