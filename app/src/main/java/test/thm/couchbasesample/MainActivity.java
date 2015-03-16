@@ -163,6 +163,7 @@ public class MainActivity extends ActionBarActivity {
 
 
     public void QueryAllDocs() throws CouchbaseLiteException {
+        
         Query query = database.createAllDocumentsQuery();
         query.setAllDocsMode(Query.AllDocsMode.ALL_DOCS);
         QueryEnumerator result = query.run();
@@ -193,34 +194,15 @@ public class MainActivity extends ActionBarActivity {
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }
-        // replication push and pull
-        Replication push = database.createPushReplication(url);
-        Replication pull = database.createPullReplication(url);
+        // TODO create replication push and pull
 
-        // Continuous push or pull?
-        pull.setContinuous(true);
-        push.setContinuous(true);
+        // TODO Continuous push or pull?
 
-        // Authenticate at the syncgateway
-        Authenticator auth = new BasicAuthenticator(CB_SYNC_USER, CB_SYNC_USER_PW);
-        push.setAuthenticator(auth);
-        pull.setAuthenticator(auth);
+        // TODO Authenticate at the syncgateway
 
-        // Replication change Listener
-        push.addChangeListener(new Replication.ChangeListener() {
-            @Override
-            public void changed(Replication.ChangeEvent event) {
-                // will be called back when the push replication status changes
-            }
-        });
-        pull.addChangeListener(new Replication.ChangeListener() {
-            @Override
-            public void changed(Replication.ChangeEvent event) {
-                // will be called back when the pull replication status changes
-            }
-        });
-        push.start();
-        pull.start();
+        // TODO optional Replication change Listener
+
+        // TODO start push pull sync
         Log.d(TAG, "Push/Pull sync started");
 
 
