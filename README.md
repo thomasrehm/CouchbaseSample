@@ -7,7 +7,8 @@ ___
 
 The tutorial can be found at [https://github.com/thomasrehm/CouchbaseSample/blob/master/_tutorial/nosql_mit_couchbase_tutorial.md#nosql-mit-couchbase---%C3%9Cbung](https://github.com/thomasrehm/CouchbaseSample/blob/master/_tutorial/nosql_mit_couchbase_tutorial.md#nosql-mit-couchbase---%C3%9Cbung)
 
-
+Link zur Beispiel config.json für das SyncGateway:
+[https://gist.github.com/thomasrehm/371f005c2bc41ba2c2c9](https://gist.github.com/thomasrehm/371f005c2bc41ba2c2c9)
 ___
 
 Parts of the project are inspired by the Couchbase Tutorials for Couchbase Lite (referring to [http://developer.couchbase.com/mobile/develop/training/build-first-android-app/index.html](http://developer.couchbase.com/mobile/develop/training/build-first-android-app/index.html) )
