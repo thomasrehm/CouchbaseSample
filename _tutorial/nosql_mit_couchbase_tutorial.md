@@ -40,8 +40,6 @@ Glückwunsch. Du hast Couchbase Server installiert!
 ### Erste Schritte
 Um einen Einstieg zu bekommen nutzen wir das UserInterface von Couchbase Server das unter der Adresse [localhost:8091/index.html](http://localhost:8091/index.html) erreichbar ist.
 
-Falls [git](http://git-scm.com/downloads) noch nicht auf deinem System installiert ist, installiere es jetzt, damit auf einem Windows-System eine Terminal-ähnliches Commandline-Interface vorhanden ist. 
-
 Um einen Einstieg zu bekommen, nutzen wir das UserInterface von Couchbase Server, das unter [localhost:8091/index.html](localhost:8091/index.html) erreichbar ist. Zum Testen:
 
 + Unter **Bucket** mittels **Create new Data Bucket** neuen Test Bucket anlegen mit Namen **people**
